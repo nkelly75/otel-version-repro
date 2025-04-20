@@ -1,0 +1,52 @@
+{
+  "name": "otel-version-repro",
+  "publisher": "internal",
+  "displayName": "otel-version-repro",
+  "description": "A dummy extension that uses OTel.",
+  "version": "0.2.16",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Chat"
+  ],
+  "activationEvents": [],
+  "extensionDependencies": [
+    "github.copilot-chat"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "otel-version-repro.fetch-example",
+        "title": "Fetch Example",
+        "category": "Demo"
+      }
+    ]
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "clean": "rimraf --glob ./out/* ./src/gen/*",
+    "precompile": "npm run clean",
+    "compile": "tsc -p ./",
+    "lint": "eslint",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.9",
+    "@types/vscode": "1.90.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "@vscode/vsce": "^3.3.2",
+    "esbuild": "^0.25.2",
+    "eslint": "^9.24.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@azure/monitor-opentelemetry": "^1.9.0",
+    "@opentelemetry/instrumentation-undici": "^0.11.0",
+    "@opentelemetry/sdk-trace-node": "^2.0.0",
+    "@opentelemetry/semantic-conventions": "^1.32.0"
+  }
+}
