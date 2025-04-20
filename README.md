@@ -23,6 +23,6 @@ Note: the code in the repo has our workaround enabled.
 ### Reproduce the original OTel Version mismatch issue
 - in `extension.ts` comment out the call to `ensureOpenTelemetryApiMatches`
 - repeat all the previous steps
-- note the different behavior in verifyExpectedTracerProvider after the initialization without the workaround:
-- GET requests to example.org will obviously still work but because of the NoopTracerProvider, telemetry won't be sent and we won't see any additional telemetry in the Azure App Insights instance.
+- note the different behavior in `verifyExpectedTracerProvider` after the initialization without the workaround:
+- GET requests to example.org will obviously still work but because of the `NoopTracerProvider`, telemetry won't be sent and we won't see any additional telemetry in the Azure App Insights instance.
 
